@@ -9,12 +9,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet"> 
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-</head>
-<body> 
-
-<!-- ############################# -->
-<!-- ############################# -->
-<!-- ############################# -->
  
 <style>
 /* estilo para o corpo da página */
@@ -81,12 +75,7 @@ padding-top: 20px;
 </style>
 
 
-<!-- ############################# -->
-<!-- ############################# -->
-<!-- ############################# -->
-
-
-<!-- navbar.css -->
+ <!-- navbar.css -->
 <style>
 /* Estilo da barra de navegação fixa no topo */
 .navbar {
@@ -188,14 +177,28 @@ position: absolute; /* Fixa o botão dentro do menu */
             }
         }
     </style>
-
-
 <!-- /navbar.css -->
 
+ <!-- estilo para os cards -->
+<style>
+.card {
+margin-bottom: 30px;
+background-color: #02133e; /* Mesma cor  menu */
+color: white;
+}
+.card-img {
+max-height: 300px; /* Altura máxima para imagens do cartão */
+object-fit: cover; /* Ajuste de imagem */
+}
+</style>
 
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
+
+ 
+</head>
+<body> 
 
 <!-- navbar.html  -->
 <!-- Barra de Navegação -->
@@ -213,7 +216,6 @@ position: absolute; /* Fixa o botão dentro do menu */
 
 </div>
 </div>
-
 
 <!-- Menu Lateral -->
 <div id="menu" class="sidebar" role="navigation" aria-hidden="true">
@@ -251,103 +253,97 @@ position: absolute; /* Fixa o botão dentro do menu */
 
 <!-- /navbar.html -->
 
-
-<!-- ------------------------------------ -->
-<!-- ------------------------------------ -->
-<!-- ------------------------------------ -->
-
-<!-- navbar.js -->
-    <script>
-        // Referências aos elementos do DOM
-        const menu = document.getElementById('menu');
-        const mainContent = document.getElementById('main-content');
-
-        // Alterna o estado do menu lateral
-        function toggleMenu() {
-            const isOpen = menu.classList.contains('active');
-            if (isOpen) {
-                closeMenu(); // Fecha o menu se estiver aberto
-            } else {
-                openMenu(); // Abre o menu se estiver fechado
-            }
-        }
-
-        // Abre o menu lateral
-        function openMenu() {
-            menu.classList.add('active'); // Adiciona classe para exibir o menu
-            menu.setAttribute('aria-hidden', 'false'); // Atualiza atributo de acessibilidade
-            mainContent.classList.add('overlay'); // Move o conteúdo principal
-        }
-
-        // Fecha o menu lateral
-        function closeMenu() {
-            menu.classList.remove('active'); // Remove classe para esconder o menu
-            menu.setAttribute('aria-hidden', 'true'); // Atualiza atributo de acessibilidade
-            mainContent.classList.remove('overlay'); // Restaura posição do conteúdo principal
-        }
-
-        // Fecha o menu ao clicar fora dele
-        window.addEventListener('click', function (event) {
-            if (!menu.contains(event.target) && !event.target.closest('.menu-btn')) {
-                closeMenu();
-            }
-        });
-
-        // Fecha o menu ao pressionar a tecla ESC
-        window.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                closeMenu();
-            }
-        });
-    </script>
-<!-- /navbar.js -->
-
-
-<!-- ############################# -->
-<!-- ############################# -->
-<!-- ############################# -->
-
 <!-- Logo abaixo do menu -->
 <div style="background-color: #02133e; text-align: center; padding: 20px;">
 <br>
 <img id="inicio" src="assets/imagens/logodorado.jpg" alt="Logo" style="max-width: 100%; height: auto;">
 </div>
+ 
 
-
- <!-- ############################# -->
-<!-- ############################# -->
-<!-- ############################# --> 
 
 <!-- áreas de atuação -->  
 <section  class="container text-center">
 <h2 id="areas-atuacao" class="section-header">Áreas de Atuação</h2>
 </section>
- 
-<!-- ############################# -->
-<!-- ############################# -->
-<!-- ############################# -->
+<!-- /áreas de atuação -->  
 
-<!-- estilo para os cards -->
-<style>
-.card {
-margin-bottom: 30px;
-background-color: #02133e; /* Mesma cor  menu */
-color: white;
-}
-.card-img {
-max-height: 300px; /* Altura máxima para imagens do cartão */
-object-fit: cover; /* Ajuste de imagem */
-}
-</style>
+
+<!-- ------------------------------------ -->
+<!-- ------------------------------------ -->
+<!-- ------------------------------------ -->
  
+<!-- Cards containes --> 
 <div class="container">  
 
-
-
+ <!-- Card Direito Civil -->
+<div id="direito_civil" class="card">
+<div class="row g-0">
+<div class="col-md-4">
+<img class="card-img" src="assets/imagens/civil.jpg" alt="Imagem de Direito Civil">
+</div> 
+<div class="col-md-8">
+<div class="card-body">
+<h3>Direito Civil</h3>
+<p> O Direito Civil é o ramo que organiza e regula as relações jurídicas entre pessoas físicas e jurídicas na esfera cível, abrangendo uma ampla gama de situações cotidianas, como Contratos, Obrigações, Propriedade, Família e Sucessões. Considerado o "direito do cidadão", ele garante a proteção dos direitos individuais e a harmonização das interações sociais que não possuem regulamentação específica em outras áreas do direito.
+</p>
+<p> Neste ramo, também atuamos com Maestria em Direito do Consumidor e Direito Bancário, lutando para garantir os direitos de nossos clientes!
+</p>           
+<!-- ------ menu suspenso ------- -->                    
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#direitoCivil" aria-expanded="false" aria-controls="direitoCivil">
+Explorar Direito Civil
+</button>                   
+<!-- Texto oculto com submenus -->
+<div class="collapse collapse-text" id="direitoCivil">
+<ul><br>
+<li><strong>Direito do Consumidor:</strong> Proteção dos direitos do consumidor em relações de consumo, prevenindo abusos e assegurando a justiça.</li>                          
+<li><strong>Direito Bancário:</strong> Lida com relações jurídicas entre instituições financeiras e clientes, garantindo transparência e respeito.</li>                          
+<li><strong>Contratos e Obrigações:</strong> Estabelecimento de direitos e deveres em acordos contratuais entre partes.</li>                          
+<li><strong>Família e Sucessões:</strong> Regulamenta direitos e deveres familiares, além de questões relacionadas a heranças.</li>
+</ul>                      
+<a href="https://wa.me/5591982420404?text=Ola%2C%20quero%20agendar%20uma%20consulta%20com%20advogado" class="btn btn-success" target="_blank">Agendar consulta</a>              
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
 
+<!-- Card Direito Penal -->
+<div id="direito_penal" class="card">
+<div class="row g-0">
+<div class="col-md-4">
+<img class="card-img" src="assets/imagens/Dpen.jpg" alt="Imagem de Direito Imobiliário">
+</div> 
+<div class="col-md-8">
+<div class="card-body">
+<h3>Direito Penal</h3>
+<p>  Nossa atuação no Direito Penal é pautada pela defesa firme e estratégica dos direitos de nossos clientes, sempre com um olhar atento às particularidades de cada caso. Prestamos assessoria em situações que envolvem a Lei Maria da Penha, oferecendo suporte especializado para vítimas de violência doméstica e familiar, e conduzindo a defesa em casos de delitos variados, assegurando que os direitos de nossos clientes sejam resguardados em todos os níveis do processo penal. Garantimos uma atuação ética e comprometida, sempre buscando a melhor solução para cada situação.
+</p>     
+<!-- ------------------------------------ -->                    
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#direitoPenal" aria-expanded="false" aria-controls="direitoPenal">
+Explorar Direito Penal
+</button>               
+<!-- Texto oculto com submenus -->
+<div class="collapse collapse-text" id="direitoPenal">
+<ul>
+<br>
+<li><strong>MARIA DA PENHA:</strong> Proteção dos direitos das mulheres, prevenindo abusos e assegurando a justiça.</li> 
+<a href="maria_pena.html" class="h3">Saiba Mais</a>                   
+</ul>                        
+<a href="https://wa.me/5591982420404?text=Ola%2C%20quero%20agendar%20uma%20consulta%20com%20advogado" class="btn btn-success" target="_blank">Agendar consulta</a>                   
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+<!-- ------------------------------------ -->
+<!-- ------------------------------------ -->
+<!-- ------------------------------------ -->
+ 
 <!-- Card Direito do Trabalho -->
 <div id="direito_do_trabalho" class="card">
 <div class="row g-0">
@@ -365,55 +361,6 @@ object-fit: cover; /* Ajuste de imagem */
 </div>
 </div>
 
-
-
-<!-- ------------------------------------ -->
-<!-- ------------------------------------ -->
-<!-- ------------------------------------ -->
-
-<!-- Card Direito Civil -->
-<div id="direito_civil" class="card">
-<div class="row g-0">
-<div class="col-md-4">
-<img class="card-img" src="assets/imagens/civil.jpg" alt="Imagem de Direito Civil">
-</div> 
-
-<div class="col-md-8">
-<div class="card-body">
-<h3>Direito Civil</h3>
-<p> O Direito Civil é o ramo que organiza e regula as relações jurídicas entre pessoas físicas e jurídicas na esfera cível, abrangendo uma ampla gama de situações cotidianas, como Contratos, Obrigações, Propriedade, Família e Sucessões. Considerado o "direito do cidadão", ele garante a proteção dos direitos individuais e a harmonização das interações sociais que não possuem regulamentação específica em outras áreas do direito.
-</p>
-<p> Neste ramo, também atuamos com Maestria em Direito do Consumidor e Direito Bancário, lutando para garantir os direitos de nossos clientes!
-</p>
-      
-            
-<!-- ------------------------------------ -->                    
-<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#direitoCivil" aria-expanded="false" aria-controls="direitoCivil">
-Explorar Direito Civil
-</button>
-
-                    
-<!-- Texto oculto com submenus -->
-<div class="collapse collapse-text" id="direitoCivil">
-<ul>
-<br>
-<li><strong>Direito do Consumidor:</strong> Proteção dos direitos do consumidor em relações de consumo, prevenindo abusos e assegurando a justiça.</li>
-                            
-<li><strong>Direito Bancário:</strong> Lida com relações jurídicas entre instituições financeiras e clientes, garantindo transparência e respeito.</li>
-                            
-<li><strong>Contratos e Obrigações:</strong> Estabelecimento de direitos e deveres em acordos contratuais entre partes.</li>
-                            
-<li><strong>Família e Sucessões:</strong> Regulamenta direitos e deveres familiares, além de questões relacionadas a heranças.</li>
-
-</ul>
-                        
-<a href="https://wa.me/5591982420404?text=Ola%2C%20quero%20agendar%20uma%20consulta%20com%20advogado" class="btn btn-success" target="_blank">Agendar consulta</a>
-                    
-</div>
-</div>
-</div>
-</div>
-</div>
 
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
@@ -465,51 +412,6 @@ Explorar Direito Civil
 </div>
 </div>
 
-
-<!-- ------------------------------------ -->
-<!-- ------------------------------------ -->
-<!-- ------------------------------------ -->
-
-<!-- Card Direito Penal -->
-<div id="direito_penal" class="card">
-<div class="row g-0">
-<div class="col-md-4">
-<img class="card-img" src="assets/imagens/Dpen.jpg" alt="Imagem de Direito Imobiliário">
-</div> 
-<div class="col-md-8">
-<div class="card-body">
-<h3>Direito Penal</h3>
-<p>  Nossa atuação no Direito Penal é pautada pela defesa firme e estratégica dos direitos de nossos clientes, sempre com um olhar atento às particularidades de cada caso. Prestamos assessoria em situações que envolvem a Lei Maria da Penha, oferecendo suporte especializado para vítimas de violência doméstica e familiar, e conduzindo a defesa em casos de delitos variados, assegurando que os direitos de nossos clientes sejam resguardados em todos os níveis do processo penal. Garantimos uma atuação ética e comprometida, sempre buscando a melhor solução para cada situação.
-</p>
-
-           
-<!-- ------------------------------------ -->                    
-<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#direitoPenal" aria-expanded="false" aria-controls="direitoPenal">
-Explorar Direito Penal
-</button>
-
-                    
-<!-- Texto oculto com submenus -->
-<div class="collapse collapse-text" id="direitoPenal">
-<ul>
-<br>
-<li><strong>MARIA DA PENHA:</strong> Proteção dos direitos das mulheres, prevenindo abusos e assegurando a justiça.</li>
- 
-<a href="maria_pena.html" class="h3">Saiba Mais</a>
-                          
-
-</ul>
-                        
-<a href="https://wa.me/5591982420404?text=Ola%2C%20quero%20agendar%20uma%20consulta%20com%20advogado" class="btn btn-success" target="_blank">Agendar consulta</a>
-                    
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
@@ -532,8 +434,6 @@ Explorar Direito Penal
 </div>
 </div>
 </div>
-
-
 
 <!-- ############################# -->
 <!-- ############################# -->
@@ -629,7 +529,51 @@ atendimento personalizado. Compreendemos os desafios e as pressões que cada cas
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<!-- navbar.js -->
+    <script>
+        // Referências aos elementos do DOM
+        const menu = document.getElementById('menu');
+        const mainContent = document.getElementById('main-content');
 
+        // Alterna o estado do menu lateral
+        function toggleMenu() {
+            const isOpen = menu.classList.contains('active');
+            if (isOpen) {
+                closeMenu(); // Fecha o menu se estiver aberto
+            } else {
+                openMenu(); // Abre o menu se estiver fechado
+            }
+        }
+
+        // Abre o menu lateral
+        function openMenu() {
+            menu.classList.add('active'); // Adiciona classe para exibir o menu
+            menu.setAttribute('aria-hidden', 'false'); // Atualiza atributo de acessibilidade
+            mainContent.classList.add('overlay'); // Move o conteúdo principal
+        }
+
+        // Fecha o menu lateral
+        function closeMenu() {
+            menu.classList.remove('active'); // Remove classe para esconder o menu
+            menu.setAttribute('aria-hidden', 'true'); // Atualiza atributo de acessibilidade
+            mainContent.classList.remove('overlay'); // Restaura posição do conteúdo principal
+        }
+
+        // Fecha o menu ao clicar fora dele
+        window.addEventListener('click', function (event) {
+            if (!menu.contains(event.target) && !event.target.closest('.menu-btn')) {
+                closeMenu();
+            }
+        });
+
+        // Fecha o menu ao pressionar a tecla ESC
+        window.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    </script>
+<!-- /navbar.js -->
 
 </body>
 </html>
