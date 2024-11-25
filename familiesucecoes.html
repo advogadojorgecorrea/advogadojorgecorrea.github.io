@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Família e Sucessões</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet"> 
+
+<link href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-left">
+        <button class="menu-btn" aria-label="Abrir Menu Lateral" onclick="toggleMenu()">☰</button>
+        <div class="navbar-title">
+            <a class="nav-link active" href="index.html"><b>HOME</b></a>
+        </div>
+    </div>
+</div>
+
+<!-- Menu Lateral -->
+<div id="menu" class="sidebar" role="navigation" aria-hidden="true">
+    <span class="close-btn" aria-label="Fechar Menu" onclick="closeMenu()">×</span>
+    <a href="#inicio"><b>INÍCIO</b></a>
+    <a href="#contato"><b>CONTATO</b></a>
+    <a href="#areas-atuacao"><b>FAMÍLIA E SUCESSÕES</b></a>
+</div>
+
+<!-- Banner -->
+<div style="background-color: #02133e; text-align: center; padding: 20px;">
+    <br>
+    <img id="inicio" src="assets/imagens/logo-familia.jpg" alt="Família e Sucessões" style="max-width: 100%; height: auto;">
+</div>
+
+<!-- Áreas de Atuação -->
+<section class="container text-center">
+    <h2 id="areas-atuacao" class="section-header">FAMÍLIA E SUCESSÕES</h2>
+    <p>Oferecemos suporte jurídico completo para questões familiares e sucessórias, priorizando a solução humanizada e eficiente de conflitos.</p>
+</section>
+
+<!-- Cards -->
+<div class="container">
+    <!-- Divórcio e Dissolução de União Estável -->
+    <div id="Divorcio" class="card">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="card-img" src="assets/imagens/divorcio.jpg" alt="Divórcio e União Estável">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3>Divórcio e Dissolução de União Estável</h3>
+                    <p>Atuamos em processos consensuais e litigiosos, assegurando que os direitos das partes sejam preservados com ética e respeito.</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#divorcioCollapse" aria-expanded="false" aria-controls="divorcioCollapse">
+                        Explorar Divórcio e União Estável
+                    </button>
+                    <div class="collapse collapse-text" id="divorcioCollapse">
+                        <ul>
+                            <li><p>Divórcio consensual e litigioso;</p></li>
+                            <li><p>Partilha de bens;</p></li>
+                            <li><p>Pensão alimentícia;</p></li>
+                            <li><p>Dissolução de união estável.</p></li>
+                        </ul>
+                        <header class="hero">
+                            <h2>Precisa de Ajuda Jurídica?</h2>
+                            <p>Transformamos desafios legais em conquistas. Confiança, segurança e resultados comprovados!</p>
+                            <a href="https://wa.me/5591982420404?text=Quero%20uma%20consultoria%20sobre%20divórcio" class="btn">Solicite uma Análise Gratuita</a>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Planejamento Sucessório -->
+    <div id="PlanejamentoSucessorio" class="card">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="card-img" src="assets/imagens/planejamento-sucessorio.jpg" alt="Planejamento Sucessório">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3>Planejamento Sucessório</h3>
+                    <p>Oferecemos consultoria para organizar a transferência de bens e garantir a proteção patrimonial de sua família.</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#planejamentoCollapse" aria-expanded="false" aria-controls="planejamentoCollapse">
+                        Explorar Planejamento Sucessório
+                    </button>
+                    <div class="collapse collapse-text" id="planejamentoCollapse">
+                        <ul>
+                            <li><p>Testamentos;</p></li>
+                            <li><p>Doações em vida;</p></li>
+                            <li><p>Cláusulas de usufruto e reversão;</p></li>
+                            <li><p>Estratégias para minimizar conflitos futuros.</p></li>
+                        </ul>
+                        <header class="hero">
+                            <h2>Precisa de Ajuda Jurídica?</h2>
+                            <p>Transformamos desafios legais em conquistas. Confiança, segurança e resultados comprovados!</p>
+                            <a href="https://wa.me/5591982420404?text=Quero%20uma%20consultoria%20sobre%20planejamento%20sucessório" class="btn">Solicite uma Análise Gratuita</a>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guarda e Regulamentação de Visitas -->
+    <div id="Guarda" class="card">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="card-img" src="assets/imagens/guarda-visitas.jpg" alt="Guarda e Visitas">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3>Guarda e Regulamentação de Visitas</h3>
+                    <p>Assessoramos famílias em processos de guarda de menores e regulamentação de visitas, visando sempre o bem-estar da criança.</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#guardaCollapse" aria-expanded="false" aria-controls="guardaCollapse">
+                        Explorar Guarda e Visitas
+                    </button>
+                    <div class="collapse collapse-text" id="guardaCollapse">
+                        <ul>
+                            <li><p>Guarda compartilhada;</p></li>
+                            <li><p>Guarda unilateral;</p></li>
+                            <li><p>Direito de visitas;</p></li>
+                            <li><p>Mediação para solução de conflitos.</p></li>
+                        </ul>
+                        <header class="hero">
+                            <h2>Precisa de Ajuda Jurídica?</h2>
+                            <p>Transformamos desafios legais em conquistas. Confiança, segurança e resultados comprovados!</p>
+                            <a href="https://wa.me/5591982420404?text=Quero%20uma%20consultoria%20sobre%20guarda%20e%20visitas" class="btn">Solicite uma Análise Gratuita</a>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Seção Contato Completa -->
+<section id="contato" class="text-center">
+    <h2 class="section-header">Entre em Contato</h2>
+    <p>Entre em contato conosco pelo telefone ou através das redes sociais.</p>
+    <p style="font-size: 0.9em;">Email: <a href="mailto:jcorrea.adv@hotmail.com">jcorrea.adv@hotmail.com</a></p>
+    <p style="font-size: 0.9em;">Telefone: <a href="tel:+5591982420404">(91) 98242-0404</a></p>
+<br>   
+    
+    <div class="social-icons">
+        <a href="https://www.facebook.com/jorgecorreafilho" target="_blank" class="me-3"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/jorgecorreaf" target="_blank" class="me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/Jorgecorreafh?t=T5iGxvFQKyPJ3XDwgpxCCg&s=09" target="_blank" class="me-3"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.tiktok.com/@jorge.correa.adv?_t=8rAHAv90Du4&_r=1" target="_blank" class="me-3"><i class="bi bi-tiktok"></i></a>
+    </div>
+<br>   
+
+    <a href="https://wa.me/5591982420404" target="_blank" class="btn btn-success">WhatsApp</a>
+</section>
+<br>
+
+
+
+<!-- Rodapé -->
+<footer class="text-center">
+    <p>JORGE CORRÊA FILHO <br> OAB/PA - 32.244 </p>
+    <p2> Endereço: Trav. Estrela, N° 2321, Marco,  Belém-Pa</p2>
+   
+    <p> &copy; 2024 Jorge Corrêa Filho - Todos os direitos reservados. <a href="#privacy-policy">Política de Privacidade</a> </p>
+</footer>
+
+<!-- javascript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
