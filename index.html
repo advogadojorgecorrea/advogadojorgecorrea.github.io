@@ -7,7 +7,6 @@
 <meta name="description" content="Advogado Jorge Corrêa Filho">
 <meta name="keywords" content=" Advogado Jorge Corrêa Filho, Advogado de Belém do Pará">
 <meta name="author" content="Aristides Barbosa Pontes">
-
 <!-- Links para CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet"> 
@@ -15,300 +14,109 @@
 </head>
 <body> 
 
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
- 
-<!-- ##################### Barra de Navegação #################### -->
+        /* Barra de navegação */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        /* Estilo do seletor */
+        #seletorConteudo {
+            margin-left: 20px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        /* Área de conteúdo */
+        #conteudo {
+            padding: 20px;
+            background: white;
+            min-height: 300px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+
+<!-- Barra de navegação -->
 <div class="navbar">
-<!-- Botão de menu lateral -->
 <div class="navbar-left">           
-<button class="menu-btn" aria-label="Abrir Menu Lateral" onclick="toggleMenu()">☰</button>  
-<!-- Título da página ao lado do Botão de menu lateral -->
-<div class="navbar-title"></div>
-<a class="nav-link active" href="index.html"><b>HOME</b></a>
-</div>
-</div>
+<a class="nav-link" href="index.html"><b>HOME</b></a>
+<a class="nav-link" href="#contato"><b>CONTATO</b></a>
+<!-- Lista suspensa para trocar os conteúdos -->
+<select id="seletorConteudo" onchange="trocarConteudo()">
+<option value="assets/home.html">Áreas de Atuação</option>
+<option value="assets/direito-administrativo.html">Direito Administrativo</option>
+<option value="assets/direito-administrativo.html">Direito Administrativo</option>
+<option value="assets/direito-administrativo.html">Direito Administrativo</option>
+<option value="assets/sobre.html">Sobre</option>
+
+            </select>
+        </div>
+    </div>
 
 
- 
-<!-- Menu Lateral -->
-<div id="menu" class="sidebar" role="navigation" aria-hidden="true">       
-<!-- Botão para fechar o menu -->
-<span class="close-btn" aria-label="Fechar Menu" onclick="closeMenu()">×</span>       
-<!-- Links do menu para sessoes da propia pagina-->
-<a href="#inicio"><b>INÍCIO</b></a>
-<a href="#areas-atuacao"><b>ÁREAS DE ATUAÇÃO</b></a>
-<a href="#direito_do_trabalho"><h6>Direito do trabalho</h6></a>
-<a href="#direito_civil"><h6>Direito civil</h6></a>
-<a href="#direito_imobiliario"><h6>Direito imobiliário</h6></a>
-<a href="#direito_administrativo"><h6>Direito administrativo</h6></a>
-<a href="#direito_penal"><h6>Direito penal</h6></a>
-<a href="#direito_previdenciario"><h6>Direito previdenciário</h6></a>
-<a href="#sobre"><b>SOBRE</b></a>    
-<a href="#contato"><b>CONTATO</b></a>
-</div>
-
-
-<!-- ################## imagem da Logo azul abaixo  da navebar/menu ################################## -->
+<!-- ################ imagem da Logo azul abaixo  da navebar/menu ######################### -->
 <div style="background-color: #02133e; text-align: center; padding: 20px;"><br>
 <img id="inicio" src="assets/imagens/logodorado.jpg" alt="Logo" style="max-width: 100%; height: auto;">
 </div>
 
+    <!-- Div onde o conteúdo será carregado -->
+    <div id="conteudo">Carregando conteúdo...</div>
 
-<!-- ##################### titulao áreas de atuação ############################# -->  
-<section  class="container text-center">
-<h2 id="areas-atuacao" class="section-header">Áreas de Atuação</h2>
-</section>
+    <script>
+        // Função para carregar dinamicamente o conteúdo das páginas
+        async function trocarConteudo() {
+            const seletor = document.getElementById("seletorConteudo");
+            const pagina = seletor.value; // Obtém o valor da opção selecionada
 
- 
-<!-- ##################### inicialização da div container para css  #################### --> 
-<div class="container">  
- 
+            try {
+                const response = await fetch(pagina);
+                if (!response.ok) throw new Error("Erro ao carregar o conteúdo.");
 
- <!-- ######################### Card Direito Civil #################################### -->
-<div id="direito_civil" class="card">
-<div class="row g-0">
-<div class="col-md-4">
-<img class="card-img" src="assets/imagens/civil.jpg" alt="Imagem de Direito Civil">
-</div> 
-<div class="col-md-8">
-<div class="card-body">
-<h3>Direito Civil</h3>
-<p> O Direito Civil é o ramo que organiza e regula as relações jurídicas entre pessoas físicas e 
- jurídicas na esfera cível, abrangendo uma ampla gama de situações cotidianas, como Contratos, Obrigações,
- Propriedade, Família e Sucessões. Considerado o "direito do cidadão", ele garante a proteção dos direitos 
- individuais e a harmonização das interações sociais que não possuem regulamentação específica em outras áreas 
- do direito.
-</p>
-<p> Neste ramo, também atuamos com Maestria em Direito do Consumidor e Direito Bancário, lutando para garantir 
- os direitos de nossos clientes!
-</p>           
-<!-- ------ menu suspenso ------- -->                    
-<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#direitoCivil" aria-expanded="false" aria-controls="direitoCivil">
-Explorar Direito Civil
-</button>                   
-<!-- Texto oculto com submenus -->
-<div class="collapse collapse-text" id="direitoCivil">
-<ul><br>
-   
+                const html = await response.text();
+                document.getElementById("conteudo").innerHTML = html;
+            } catch (error) {
+                document.getElementById("conteudo").innerHTML = "Erro ao carregar conteúdo.";
+                console.error(error);
+            }
+        }
 
-<li><p> <strong>DIREITO DO CONSUMIDOR:</strong> Proteção dos direitos do consumidor em relações de consumo, prevenindo abusos e assegurando a justiça.</p>
-    <a href="assets/direito_consumidor.html" class="btn btn-outline-primary btn-sm">Saiba Mais</a></li> <br>
-
-<li><p><strong>Direito Bancário:</strong> Lida com relações jurídicas entre instituições financeiras e clientes, garantindo transparência e respeito.</p>
-    <a href="assets/direito_bancario.html" class="btn btn-outline-primary btn-sm">Saiba Mais</a></li> <br>         
-
-<li><p><strong>Contratos e Obrigações:</strong> Estabelecimento de direitos e deveres em acordos contratuais entre partes.</p>
-    <a href="assets/contratoseobrigacoes.html" class="btn btn-outline-primary btn-sm">Saiba Mais</a></li><br>
-
-<li><p><strong>Família e Sucessões:</strong> Regulamenta direitos e deveres familiares, além de questões relacionadas a heranças.</p>
-    <a href="assets/familia_su.html" class="btn btn-outline-primary btn-sm">Saiba Mais</a></li><br>
-
-
-</ul>  
-
- <!-- Hero Section -->
- <header class="hero"> 
-    <h2>Precisa de Ajuda Jurídica?</h2>
-    
-    <a href="https://wa.me/5591982191168?text=Quero%20uma%20consulta%20jurídica" class="btn">Fale com um Advogado</a>
-</header>  
-
-</div>
-</div>
-</div>
-</div>
-</div>
- 
-
-
-<!-- Card Direito Penal -->
-<div id="direito_penal" class="card">
-<div class="row g-0">
-<div class="col-md-4">
-<img class="card-img" src="assets/imagens/Dpen.jpg" alt="Imagem de Direito Imobiliário">
-</div> 
-<div class="col-md-8">
-<div class="card-body">
-<h3>Direito Penal</h3>
-<p>  Nossa atuação no Direito Penal é pautada pela defesa firme e estratégica dos direitos de nossos clientes, sempre com um olhar atento às particularidades de cada caso. Prestamos assessoria em situações que envolvem a Lei Maria da Penha, oferecendo suporte especializado para vítimas de violência doméstica e familiar, e conduzindo a defesa em casos de delitos variados, assegurando que os direitos de nossos clientes sejam resguardados em todos os níveis do processo penal. Garantimos uma atuação ética e comprometida, sempre buscando a melhor solução para cada situação.
-</p>     
-<!-- ------------------------------------ -->                    
-<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#direitoPenal" aria-expanded="false" aria-controls="direitoPenal">
-Explorar Direito Penal
-</button>               
-<!-- Texto oculto com submenus -->
-<div class="collapse collapse-text" id="direitoPenal">
-<ul>
-<br>
-<li>
-     
-    <p> <strong>MARIA DA PENHA:</strong>  Proteção dos direitos das mulheres, prevenindo abusos e assegurando a justiça.</p>
-        <a href="assets/maria-da-penha.html" class="btn btn-outline-primary btn-sm">Saiba Mais</a></li> <br>
-   
-                 
-</ul>   
- <!-- Hero Section -->
- <header class="hero"> 
-    <h2>Precisa de Ajuda Jurídica?</h2>
-    
-    <a href="https://wa.me/5591982191168?text=Quero%20uma%20consultoria%20em%20tráfego%20pago" class="btn">Solicite uma Análise Gratuita</a>
-</header>                      
-</div>
-</div>
-</div>
-</div>
-</div>
- 
-
- 
-<!-- Card Direito do Trabalho -->
-<div id="direito_do_trabalho" class="card">
-<div class="row g-0">
-<div class="col-md-4">
-<img class="card-img" src="assets/imagens/Dt.jpg" alt="Imagem de Direito do Trabalho">
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<h3>Direito do Trabalho</h3>
-<p> O Direito do Trabalho é o ramo jurídico que regula 
- as relações entre empregados e empregadores, 
- estabelecendo direitos e obrigações de ambas 
- as partes. Seu objetivo é garantir condições
- justas e dignas de trabalho, assegurando a proteção 
- dos trabalhadores e promovendo o equilíbrio nas 
- relações laborais, como remuneração, jornada, 
- segurança e saúde ocupacional.
-</p>
-
-</div>
-</div>
-</div>
-</div>
-
- 
+        // Chamar a função ao carregar a página para exibir o conteúdo inicial
+        trocarConteudo();
+    </script>
 
 
 
 
-<!-- Card Direito Imobiliário ##################################3-->
-<div id="direito_imobiliario" class="card">
-<div class="row g-0">
-<div class="col-md-4">
 
-<img class="card-img" src="assets/imagens/imobiliario.jpg" alt="Imagem de Direito Imobiliário">
-</div> 
-<div class="col-md-8">
-<div class="card-body">
-
-<h3>Direito Imobiliário</h3>
-<p>  Nossa atuação no Direito Imobiliário 
- abrange um suporte completo para regularização e 
- legalização de imóveis, garantindo a segurança 
- jurídica necessária em cada etapa do processo.
- Com experiência em questões como registro de 
- propriedade, análise de contratos, compra e venda, 
- locações e usucapião, oferecemos um acompanhamento 
- especializado para evitar riscos e assegurar que 
- todas as transações imobiliárias sejam realizadas de 
- forma correta e eficiente. Nosso objetivo é 
- proporcionar tranquilidade e confiança ao cliente, 
- cuidando de toda a documentação e assegurando que os 
- negócios imobiliários sejam concluídos com total 
- transparência e conformidade legal.
-</p>
-
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-
-
-<!-- Card Direito Administrativo -->
-<div id="direito_administrativo" class="card">
-<div class="row g-0">
-<div class="col-md-4">
-<img class="card-img" src="assets/imagens/administrativo.jpg" alt="Imagem de Direito Administrativo">
-</div> 
-<div class="col-md-8">
-<div class="card-body">
-<h3>Direito Administrativo</h3>
-<p>  O Direito Administrativo é o ramo que disciplina as atividades e as relações jurídicas entre o Estado e os cidadãos, especialmente no que tange à administração pública. Somos experts em defesas contra decisões administrativas e na defesa dos direitos dos servidores, além de atuar com grande maestria nos direitos dos cidadãos em face da Administração Pública.
-</p>
-
-              
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-
-<!-- Card Direito Previdenciário -->
-<div id="direito_previdenciario" class="card">
-<div class="row g-0">
-<div class="col-md-4">
-<img class="card-img" src="assets/imagens/Dprev.jpg" alt="Imagem de Direito Previdenciário">
-</div> 
-<div class="col-md-8">
-<div class="card-body">
-<h3>Direito Previdenciário</h3>
-<p>  O Direito Previdenciário é uma área autônoma do Direito Público que assegura o cumprimento dos direitos relacionados à Seguridade Social, regulando as relações entre o segurado e o ente previdenciário. No Brasil, essa relação é gerida pelo Instituto Nacional do Seguro Social (INSS), garantindo a proteção social e o acesso a benefícios previdenciários como aposentadorias, pensões e auxílios.
-</p>
-                
-    </div>
-    </div>
-    </div>
-    </div>
-  
-
-
-   
-<!-- áreas de sobre -->  
-<section id="sobre" class="container text-center">
-<h2 class="section-header"> Sobre </h2>
-</section>
-
-
-
-<!-- card2  jorge -->
-<div class="card">
-<p>
-<img class="card-img" src="assets/imagens/jorge.jpg" alt="Imagem Jorge">
-</p>
-<div class="card-body">
-
-<p>
-
-   Nosso escritório foi fundado com o propósito de oferecer um atendimento jurídico diferenciado, 
-   sempre prezando pela excelência e dedicação a nossos clientes e parceiros. Atuamos de forma abrangente, 
-   tanto no setor público quanto no privado, oferecendo consultoria e assessoria jurídica em diversas áreas do Direito, 
-   como previdência social, direito trabalhista, direito penal e questões civis do dia a dia.
-   Com uma equipe composta por profissionais altamente qualificados e experientes, buscamos aliar conhecimento técnico 
-   e práticas inovadoras para solucionar os casos mais complexos. Nosso compromisso é proporcionar um serviço personalizado,
-   construindo relações baseadas em confiança e transparência. Acreditamos que cada cliente é único e, por isso, tratamos 
-   cada caso com a atenção e o respeito que merece.
-
-    Sob a liderança de Jorge Corrêa Filho, nossa equipe se destaca pelo comprometimento em alcançar os melhores resultados para nossos clientes,
-    apoiando-os em todas as etapas do processo jurídico. Se você está em busca de um advogado confiável e dedicado para atender às suas necessidades jurídicas, 
-    entre em contato conosco. Estamos prontos para oferecer o suporte necessário e ajudar você a superar os desafios legais com segurança e eficiência.
-</p>    
-<p>
-Jorge Corrêa Filho – Temos orgulho em manter uma tradição de excelência e comprometimento, oferecendo serviços jurídicos de alta qualidade e 
-atendimento personalizado. Compreendemos os desafios e as pressões que cada caso pode trazer, e estamos prontos para apoiá-lo em todas as etapas do processo.
-</p>
-
-
-
-</div>
-</div>          
-</div>
-
-</section>
-
-
-
+<!-- Rodapé -->
 <!-- Seção Contato Completa -->
 <section id="contato" class="text-center">
     <h2 class="section-header">Entre em Contato</h2>
@@ -329,9 +137,7 @@ atendimento personalizado. Compreendemos os desafios e as pressões que cada cas
 </section>
 <br>
 
-
-
-<!-- Rodapé -->
+<!-- FOOTER -->
 <footer class="text-center">
     <p>JORGE CORRÊA FILHO <br> OAB/PA - 32.244 </p>
     <p2> Endereço: Trav. Estrela, N° 2321, sala 201A, Marco,  Belém-Pa</p2>
@@ -346,9 +152,3 @@ atendimento personalizado. Compreendemos os desafios e as pressões que cada cas
 
 </body>
 </html>
-
-
-
-
-
- 
