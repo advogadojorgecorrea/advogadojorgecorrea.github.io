@@ -10,147 +10,25 @@
 <!-- Links para CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet"> 
-<link href="assets/css/style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 </head>
 <body> 
 
-    <style>
-        /* Estilos gerais */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
 
-        /* Barra de navegação */
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            /*background-color: #333;*/
-            padding: 10px 20px;
-            color: white;
-          
-        }
-
-        .navbar-left {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: white;
-            margin-left: 15px;
-            font-size: 18px;
-        }
-
-        /* Estilo do seletor */
-        #seletorConteudo {
-            margin-left: 20px;
-            padding: 5px;
-            font-size: 16px;
-        }
-
-        /* Área de conteúdo */
-        #conteudo {
-            padding: 20px;
-            background: white;
-            min-height: 300px;
-            margin: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+<!-- Div onde o conteúdo será carregado -->
+<div class="meu-header" id="meu-header">Carregando header...</div>
+  
+<!-- Div onde o conteúdo será carregado -->
+<div id="conteudo">Carregando conteúdo...</div> 
+  
+<!-- Div onde o conteúdo será carregado -->
+<div class="meu-footer" id="meu-footer">Carregando footer...</div>
 
 
-<!-- Barra de navegação -->
-<div class="navbar">
-<div class="navbar-left">           
-<a class="nav-link" href="index.html"><b>HOME</b></a>
-<a class="nav-link" href="#contato"><b>CONTATO</b></a>
-<!-- Lista suspensa para trocar os conteúdos -->
-<select id="seletorConteudo" onchange="trocarConteudo()">
-<option value="assets/home.html">Áreas de Atuação</option>
-<option value="assets/contratos.html">Contrato e Obrigações</option> 
-<option value="assets/direito-aereo.html">Direito Aereo</option>  
-<option value="assets/direito_bancario.html">Direito Bancario</option>  
-<option value="assets/direito_consumidor.html">Direito Consumidor</option>
-<option value="assets/familia_su.html">Familia e Sucessão</option> 
-<option value="assets/maria-da-penha.html">Maria da Penha</option> 
-</select>
-</div>
-</div>
-
-
-<!-- ################ imagem da Logo azul abaixo  da navebar/menu ######################### -->
-<div style="background-color: #02133e; text-align: center; padding: 20px;"><br>
-<img id="inicio" src="assets/imagens/logodorado.jpg" alt="Logo" style="max-width: 100%; height: auto;">
-</div>
-
-    <!-- Div onde o conteúdo será carregado -->
-    <div id="conteudo">Carregando conteúdo...</div>
-
-    <script>
-        // Função para carregar dinamicamente o conteúdo das páginas
-        async function trocarConteudo() {
-            const seletor = document.getElementById("seletorConteudo");
-            const pagina = seletor.value; // Obtém o valor da opção selecionada
-
-            try {
-                const response = await fetch(pagina);
-                if (!response.ok) throw new Error("Erro ao carregar o conteúdo.");
-
-                const html = await response.text();
-                document.getElementById("conteudo").innerHTML = html;
-            } catch (error) {
-                document.getElementById("conteudo").innerHTML = "Erro ao carregar conteúdo.";
-                console.error(error);
-            }
-        }
-
-        // Chamar a função ao carregar a página para exibir o conteúdo inicial
-        trocarConteudo();
-    </script>
-
-
-
-
-
-<!-- Rodapé -->
-<!-- Seção Contato Completa -->
-<section id="contato" class="text-center">
-    <h2 class="section-header">Entre em Contato</h2>
-    <p>Entre em contato conosco pelo telefone ou através das redes sociais.</p>
-    <p style="font-size: 0.9em;">Email: <a href="mailto:jorgecorreafh.adv@gmail.com">jorgecorreafh.adv@gmail.com</a></p>
-    <p style="font-size: 0.9em;">Telefone: <a href="tel:+5591982191168">(91) 98219-1168</a></p>
-<br>   
-    
-    <div class="social-icons">
-        <a href="https://www.facebook.com/jorgecorreafilho" target="_blank" class="me-3"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/jorgecorreaf" target="_blank" class="me-3"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Jorgecorreafh?t=T5iGxvFQKyPJ3XDwgpxCCg&s=09" target="_blank" class="me-3"><i class="bi bi-twitter"></i></a>
-        <a href="https://www.tiktok.com/@jorge.correa.adv?_t=8rAHAv90Du4&_r=1" target="_blank" class="me-3"><i class="bi bi-tiktok"></i></a>
-    </div>
-<br>   
-
-    <a href="https://wa.me/5591982191168" target="_blank" class="btn btn-success">WhatsApp</a>
-</section>
-<br>
-
-<!-- FOOTER -->
-<footer class="text-center">
-    <p>JORGE CORRÊA FILHO <br> OAB/PA - 32.244 </p>
-    <p2> Endereço: Trav. Estrela, N° 2321, sala 201A, Marco,  Belém-Pa</p2>
-   
-    <p> &copy; 2024 Jorge Corrêa Filho - Todos os direitos reservados. <a href="#privacy-policy">Política de Privacidade</a> </p>
-</footer>
 
 <!-- javascript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="assets/js/script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
